@@ -7,7 +7,7 @@ const AddStudent = ({students, setStudents}) => {
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [program, setProgram] = useState("");
-    const [graduationYear, setGraduationYear] = useState(2023);
+    const [graduationYear, setGraduationYear] = useState("");
     const [graduated, setGraduated] = useState(false);
     const nav = useNavigate();
 
@@ -24,6 +24,13 @@ const AddStudent = ({students, setStudents}) => {
           graduated
         };
         setStudents([...students, newStudent]);
+        setFullName("");
+        setImage("");
+        setPhone("");
+        setEmail("");
+        setProgram("");
+        setGraduated(false);
+        setGraduationYear("");
         nav("/");
     }    
     const handleFullNameChange = (event) => setFullName(event.target.value);
